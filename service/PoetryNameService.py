@@ -18,7 +18,7 @@ class PoetryNameService:
         return dict(
             name=cls.make_name(sentence),
             sentence=sentence_base,
-            content=poetry.content
+            content=poetry.content.replace('|', '\n</br>')
         )
 
     @classmethod

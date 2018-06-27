@@ -1,1 +1,69 @@
-test123
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grid Item Animation Layout - Demo 1</title>
+		<meta name="description" content="A responsive, magazine-like website layout with a grid item animation effect when opening the content" />
+		<meta name="keywords" content="grid, layout, effect, animated, responsive, magazine, template, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="sshortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}" />
+		<script src="{{ url_for('static', filename='js/modernizr.custom.js') }}"></script>
+	</head>
+	<body>
+		<div class="container">
+			<button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
+			<div id="theSidebar" class="sidebar">
+				<button class="close-button fa fa-fw fa-close"></button>
+				<div class="codrops-links">
+					<a class="codrops-icon codrops-icon--prev" href="" title="Previous Demo"><span>Previous Demo</span></a>
+					<a class="codrops-icon codrops-icon--drop" href="" title="Back to the article"><span>Back to the Codrops article</span></a>
+				</div>
+				<h1><span>Animated<span> Grid Layout</span></h1>
+				<nav class="codrops-demos">
+				</nav>
+				<div class="related">
+					<h3>Related Demos</h3>
+				</div>
+			</div>
+			<div id="theGrid" class="main">
+				<section class="grid">
+					<header class="top-bar">
+						<h2 class="top-bar__headline">	</h2>
+						<div class="filter">
+							<span>Power by:</span>
+							<span class="dropdown">Zongwen</span>
+						</div>
+					</header>
+					{% for name in names %}
+					<a class="grid__item" href="#">
+						<h2 class="title title--preview">{{ name['name'] }}</h2>
+						<div class="loader"></div>
+						<span class="category">{{ name['content']| safe }}</span>
+
+						<div class="meta meta--preview">
+							<!--<img class="meta__avatar" src="{{ url_for('static', filename='img/authors/1.png') }}" alt="author01" />-->
+							<!--<span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>-->
+							<!--<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>-->
+						</div>
+					</a>
+					{% endfor %}
+
+					<footer class="page-meta">
+					</footer>
+				</section>
+				<section class="content">
+					<div class="scroll-wrap">
+					</div>
+					<button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
+				</section>
+			</div>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
