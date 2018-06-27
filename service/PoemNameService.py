@@ -1,5 +1,5 @@
 from model.db import *
-from random import choice
+from random import *
 from service.SystemService import SystemService
 
 
@@ -8,7 +8,7 @@ class PoemNameService:
     @classmethod
     def get(cls):
         while 1:
-            poem = Poems.select().order_by(fn.Rand()).first()
+            poem = Poems.select().order_by(randint(1,21050)).first()
             sentences = str(poem.content).split('\n')
             sentence_base = choice(sentences)
             sentence = sentence_base.replace(',', '').replace('。', '').replace('，', '')

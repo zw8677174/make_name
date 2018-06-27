@@ -1,1 +1,3 @@
-yum install python34
+flask
+pymysql
+peewee
