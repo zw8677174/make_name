@@ -8,7 +8,7 @@ class PoetryNameService:
     @classmethod
     def get(cls):
         while 1:
-            poetry = Poetry.select().where(Poetry.id == randint(1, 311828)).first()
+            poetry = Poetry.select().where(Poetry.id == 1).first()
             sentences = str(poetry.content).split('|')
             sentence_base = choice(sentences)
             sentence = sentence_base.replace(',', '').replace('。', '').replace('，', '')
