@@ -18,7 +18,7 @@ class PoemNameService:
         return dict(
             name=cls.make_name(sentence),
             sentence=sentence_base,
-            content=poem.content
+            content=poem.content.replace('。', '\n\r')
         )
 
     @classmethod
