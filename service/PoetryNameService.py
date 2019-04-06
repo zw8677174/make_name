@@ -8,7 +8,7 @@ class PoetryNameService:
     @classmethod
     def get(cls):
         while 1:
-            poetry = Poetry.select().where(Poetry.id == 1).first()
+            poetry = Poetry.select().where(Poetry.id == randint(1, 311828)).first()
             sentences = str(poetry.content).split('|')
             sentence_base = choice(sentences)
             sentence = sentence_base.replace(',', '').replace('。', '').replace('，', '')
@@ -23,9 +23,12 @@ class PoetryNameService:
 
     @classmethod
     def make_name(cls, sentence):
-        name1 = choice(sentence)
-        name2 = choice(sentence)
-        return name1 + name2
+        len1 = len(sentence)
+        target = []
+        for i in range(3):
+            target.append(randint(0, len1 - 1))
+        target = sorted(target)
+        return sentence[target[0]] + sentence[target[1]] +sentence[target[2]]
 
     @classmethod
     def check_sentence(cls, sentence):

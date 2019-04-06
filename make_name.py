@@ -19,11 +19,11 @@ def get():
             ret = PoemNameService.get()
         else:
             ret = PoetryNameService.get()
+
         for i in ret:
             ret[i] = ScAndTcService.sc_to_tc(ret[i])
 
         names.append(ret)
-
     return render_template('index.html', names=names)
 
 

@@ -23,9 +23,6 @@ class ScAndTcService:
     @classmethod
     def sc_to_tc(cls, sentence):
         default_word_dict = dict((v, k) for k, v in cls.get_default_key().items())
-        print(default_word_dict)
-
-        exit()
         ret = ""
         for index in sentence:
             if default_word_dict.get(index):
