@@ -1,7 +1,7 @@
 from peewee import *
 
 database = MySQLDatabase('make_name',
-                         **{'user': 'root', 'charset': 'utf8', 'use_unicode': True, 'host': '119.27.187.220',
+                         **{'user': 'zw', 'charset': 'utf8', 'use_unicode': True, 'host': '123.207.240.121',
                             'port': 3306, 'password': 'Zongwen123!@#'})
 
 
