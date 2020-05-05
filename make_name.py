@@ -11,6 +11,10 @@ app = Flask(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 
+@app.route('/')
+def index_get():
+    return "index"
+
 @app.route('/name/get')
 def get():
     names = []
