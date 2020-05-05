@@ -1,16 +1,13 @@
 <template>
   <div >
       <carousel></carousel>
-      <el-row>
-          <el-col :span="12" style="background-image:url('@/assets/homepage.jpg')">
-              test
-          </el-col>
-      </el-row>
+      <cardList></cardList>
   </div>
 </template>
 
 <script>
 import carousel from './carousel.vue' 
+import cardList from './cardList.vue' 
 export default {
     name: 'HomePage',
     data () {
@@ -19,7 +16,8 @@ export default {
         }
     },
     components:{
-        'carousel': carousel
+        'carousel': carousel,
+        'cardList': cardList
     }
 
 }
